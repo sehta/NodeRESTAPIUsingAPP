@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Node Web App</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <%if(typeof user!='undefined'){ %>  <li><a>Welcome, <%=user.name%> </a></li> <%}%>
+            <li><a href="../index">Home</a></li>
+            
+             <%if(typeof user=='undefined'){ %> <li><a href="../signup">SignUp</a></li><%}%>
+            <%if(typeof user!='undefined'){ %> <li><a href="../signout">Logout</a></li> <%} else {%>
+                <li><a href="../login">Login </a></li>
+              <%}%>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>

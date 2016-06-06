@@ -1,0 +1,24 @@
+	<div class="container">
+        
+        <%if(message){%>
+        <h2 class="text-center error-message"><%=message%></h2> <%}%>
+         <%if(message=="Already Loggedin"){%>
+         <p>You are already Logged in, please signout from here <a href="/signout">Signout</a></p>
+        <%} else {%>
+		<form class="form-signin" action="/login" method="post">
+        	<h2 class="form-signin-heading text-center">User Login Form!</h2>
+        
+	        <label for="username" class="sr-only">Username</label>
+	        <input type="email" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+	        
+	        <label for="password" class="sr-only">Password</label>
+	        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required autofocus>
+	        
+	        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            
+            <hr>
+
+            <p>Need an account? <a href="/signup">Signup</a></p>
+      	 </form>
+         <%}%>
+    </div>
