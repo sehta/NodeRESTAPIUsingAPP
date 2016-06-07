@@ -30,7 +30,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 app.use(cookieSession({
   cookieName: 'session',
   secret: 'er4534hfsdf254wfhrw8275rwhe99',
@@ -47,7 +50,6 @@ initPassport(passport);
 
 var routes = require('./routes/index')(passport);
 app.use('/', routes);
-
 
 //app.use('/users', users);
 
